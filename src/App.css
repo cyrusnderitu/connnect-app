@@ -1,38 +1,95 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+input:focus{
+    background: transparent;
+}
+input{
+    outline: none;
+    color: white;
+}
+.active{
+    padding: 8px;
+    background-color: cadetblue;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+::placeholder{
+    color: lightgray;
+}
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-thumb {
+  width: 26px;
+  border-radius: 13px;
+  background-clip: padding-box;
+  border: 10px solid transparent;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*::-webkit-scrollbar-thumb {        
+  box-shadow: inset 0 0 0 10px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.timeline,
+.chats{
+    overflow: auto;
+    transition: color .3s ease;
+}
+.wave {
+    width: 5px;
+    height: 100px;
+    background: linear-gradient(45deg, cyan, #fff);
+    margin: 10px;
+    animation: wave 1s linear infinite;
+    border-radius: 20px;
   }
+.wave:nth-child(2) {
+    animation-delay: 0.1s;
+}
+.wave:nth-child(3) {
+animation-delay: 0.2s;
+}
+.wave:nth-child(4) {
+animation-delay: 0.3s;
+}
+.wave:nth-child(5) {
+animation-delay: 0.4s;
+}
+.wave:nth-child(6) {
+animation-delay: 0.5s;
+}
+.wave:nth-child(7) {
+animation-delay: 0.6s;
+}
+.wave:nth-child(8) {
+animation-delay: 0.7s;
+}
+.wave:nth-child(9) {
+animation-delay: 0.8s;
+}
+.wave:nth-child(10) {
+animation-delay: 0.9s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@keyframes wave {
+0% {
+    transform: scale(0);
 }
-
-.App-link {
-  color: #61dafb;
+50% {
+    transform: scale(1);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+100% {
+    transform: scale(0);
+}
 }
